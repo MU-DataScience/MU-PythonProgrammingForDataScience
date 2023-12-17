@@ -81,3 +81,57 @@ int(a * b / 10)
 
 c = a * b / 10
 int(c)
+
+###########################################
+# Karakter Dizileri (Strings)
+###########################################
+
+print("John")
+print('John')
+
+"John"
+name = "John"
+name = 'John'
+
+#########################
+# Çok Satırlı Karakter Dizileri
+#########################
+
+"""Veri Yapıları: Hızlı Özet,
+Sayılar (Numbers): int, float, complex,
+Karakter Dizileri(Strings): str,
+List, Dictionary, Tuple, Set,
+Boolean (TRUE-FALSE): bool"""
+
+longStr = """Veri Yapıları: Hızlı Özet,
+Sayılar (Numbers): int, float, complex,
+Karakter Dizileri(Strings): str,
+List, Dictionary, Tuple, Set,
+Boolean (TRUE-FALSE): bool"""
+
+#########################
+# Karakter Dizilerinin Elemanlarına Erişmek
+#########################
+
+name
+name[0]
+name[3]
+name[2]
+
+
+#########################
+# Karakter Dizilerinde Slice İşlemi
+#########################
+
+name[0:2]
+longStr[0:10]
+
+#########################
+# String İçerisinde Karakter Sorgulamak
+#########################
+
+"veri" in longStr
+
+"Veri" in longStr
+
+"bool" in longStr
