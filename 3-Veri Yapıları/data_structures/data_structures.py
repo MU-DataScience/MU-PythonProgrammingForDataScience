@@ -118,7 +118,6 @@ name[0]
 name[3]
 name[2]
 
-
 #########################
 # Karakter Dizilerinde Slice İşlemi
 #########################
@@ -169,7 +168,7 @@ len("miuul")
 #################
 
 hi = "Hello AI Era"
-hi.replace("l","p")
+hi.replace("l", "p")
 
 #################
 # split: böler
@@ -193,3 +192,61 @@ hi.replace("l","p")
 dir("foo")
 
 "foo".startswith("f")
+
+###########################################
+# Liste (List)
+###########################################
+
+# - Değiştirilebilir
+# - Sıralıdır. Index işlemleri yapılabilir
+# - Kapsayıcıdır.
+
+notes = [1, 2, 3, 4]
+type(notes)
+names = ["a", "b", "v", "d"]
+
+not_num = [1, 2, 3, "a", "b", True, [1, 2, 3]]
+
+not_num[0]
+not_num[5]
+not_num[6]
+not_num[6][1]
+
+type(not_num[6])
+type(not_num[6][1])
+
+notes[0] = 99
+
+not_num[0:4]
+
+##################################
+# Liste Metotları (List Methods)
+##################################
+
+dir(notes)
+
+#######################
+# len: builtin python fonksiyonu, boyut bilgisi.
+######################
+
+len(notes)
+len(not_num)
+
+#######################
+# append: eleman ekler
+######################
+
+notes
+notes.append(100)
+
+#######################
+# pop: indexe göre eleman siler.
+######################
+
+notes.pop(0)
+
+#######################
+# insert: index'e eleman ekler
+######################
+
+notes.insert(2, 99)
