@@ -135,3 +135,61 @@ longStr[0:10]
 "Veri" in longStr
 
 "bool" in longStr
+
+###########################################
+# String (Karakter Dizisi) Metodları
+###########################################
+
+dir(int)
+dir(str)
+
+#################
+# len
+#################
+
+name = "john"
+type(len)
+
+len(name)
+len("musauyumaz")
+len("miuul")
+
+#################
+# upper() & lower(): küçük-büyük dönüşümleri
+#################
+
+"miuul".upper()
+"MIUUL".lower()
+
+# type(upper)
+# type(upper())
+
+#################
+# replace: karakter değiştirir
+#################
+
+hi = "Hello AI Era"
+hi.replace("l","p")
+
+#################
+# split: böler
+#################
+
+"Hello AI Era".split()
+
+#################
+# strip: kırpar
+#################
+
+" ofofo ".strip()
+"ofofo".strip("o")
+
+#################
+# capitalize: ilk harfi büyütür
+#################
+
+"foo".capitalize()
+
+dir("foo")
+
+"foo".startswith("f")
