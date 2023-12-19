@@ -45,3 +45,33 @@ summer(7, 8)
 summer(8, 7)
 
 summer(arg2=8, arg1=7)
+
+
+#######################
+# Docstring
+#######################
+
+def summer(arg1, arg2):
+    print(arg1 + arg2)
+
+
+def summer(arg1, arg2):
+    """
+    Sum of two numbers
+    Args:
+        arg1: int, float
+        arg2: int, float
+
+    Returns:
+        int, float
+    Examples:
+
+    Notes:
+        
+    """
+    print(arg1 + arg2)
+
+?summer
+help(summer)
+
+summer(1, 3)
