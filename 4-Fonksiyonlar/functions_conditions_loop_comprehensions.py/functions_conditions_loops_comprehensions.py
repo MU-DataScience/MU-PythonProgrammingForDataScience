@@ -161,3 +161,40 @@ def calculate(varm, moisture, charge):
 
 
 calculate(98, 12, 78)
+
+
+#######################
+# Return: Fonksiyon Çıktılarını Girdi Olarak Kullanma
+#######################
+
+def calculate(varm, moisture, charge):
+    print((varm + moisture) / charge)
+
+
+# calculate(98, 12, 78) * 10
+
+type(10)
+type(calculate(98, 12, 78))
+
+
+def calculate(varm, moisture, charge):
+    return (varm + moisture) / charge
+
+
+calculate(98, 12, 78) * 10
+
+a = calculate(98, 12, 78)
+
+
+def calculate(varm, moisture, charge):
+    varm = varm * 2
+    moisture = moisture * 2
+    charge = charge * 2
+    output = (varm + moisture) / charge
+    return varm, moisture, charge, output
+
+
+calculate(98, 12, 78)
+type(calculate(98, 12, 78))
+
+varm, moisture, charge, output = calculate(98, 12, 78)
