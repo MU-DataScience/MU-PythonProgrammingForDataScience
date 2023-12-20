@@ -215,3 +215,47 @@ for index, student in enumerate(students, 1):
         A.append(student)
     else:
         B.append(student)
+
+#######################
+# Uygulama - Mülakat Sorusu
+#######################
+# divide_students fonksiyonu yazınız.
+# Çift index'te yer alan öğrenileri bir listeye alınız.
+# Tek index'te yer alan öğrenileri bir listeye alınız.
+# Fakat bu iki liste tek bir liste olarak return olsun.
+
+students = ["John", "Mark", "Venessa", "Mariam"]
+
+
+# region Çözümüm
+def divide_students(students):
+    cift = []
+    tek = []
+    birlesmisListe = []
+    for index, student in enumerate(students):
+        if index % 2 == 0:
+            cift.append(student)
+        else:
+            tek.append(student)
+    return [cift, tek]
+
+
+# endregion
+# region Hocanın Çözümü
+def divide_students(students):
+    groups = [[], []]
+    for index, student in enumerate(students):
+        if index % 2 == 0:
+            groups[0].append(student)
+        else:
+            groups[1].append(student)
+    print(groups)
+    return groups
+
+st = divide_students(students)
+st[0]
+st[1]
+
+# endregion
+
+divide_students(students)
