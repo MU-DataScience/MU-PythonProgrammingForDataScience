@@ -349,3 +349,5 @@ list(filter(lambda x: x % 2 == 0, list_store))
 from functools import reduce
 list_store = [1, 2, 3, 4]
 reduce(lambda a, b: a + b, list_store)
+
+
