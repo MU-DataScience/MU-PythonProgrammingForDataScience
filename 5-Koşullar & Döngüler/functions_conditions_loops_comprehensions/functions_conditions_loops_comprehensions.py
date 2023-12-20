@@ -252,6 +252,7 @@ def divide_students(students):
     print(groups)
     return groups
 
+
 st = divide_students(students)
 st[0]
 st[1]
@@ -259,3 +260,38 @@ st[1]
 # endregion
 
 divide_students(students)
+
+
+#######################
+# alternating fonksiyonunun enumerate ile yazılması
+#######################
+
+# region Çözümüm
+def alternating(text):
+    new_string = ""
+    for index, i in enumerate(text):
+        if index % 2 == 0:
+            new_string += i.upper()
+        else:
+            new_string += i.lower()
+    print(new_string)
+
+
+alternating("hi my name is john and i am learning python")
+
+
+# endregion
+
+# region Hocanın Çözümü
+def alternating_with_enumerate(string):
+    new_string = ""
+    for i, letter in enumerate(string):
+        if i % 2 == 0:
+            new_string += letter.upper()
+        else:
+            new_string += letter.lower()
+    print(new_string)
+
+
+alternating("hi my name is john and i am learning python")
+# endregion
