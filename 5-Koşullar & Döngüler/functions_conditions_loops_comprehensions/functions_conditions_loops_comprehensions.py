@@ -191,3 +191,27 @@ number = 1
 while number < 5:
     print(number)
     number += 1
+
+#######################
+# Enumerate: Otomatik Counter/Indexer ile for loop
+#######################
+
+students = ["John", "Mark", "Venessa", "Mariam"]
+
+for student in students:
+    print(student)
+
+for index, student in enumerate(students):
+    print(index, student)
+
+for index, student in enumerate(students, 1):
+    print(index, student)
+
+A = []
+B = []
+
+for index, student in enumerate(students, 1):
+    if index % 2 == 0:
+        A.append(student)
+    else:
+        B.append(student)
