@@ -48,3 +48,19 @@ type(np.array([1, 2, 3, 4, 5]))
 np.zeros(10, dtype=int)
 np.random.randint(0, 10, size=10)
 np.random.normal(10, 4, (3, 4))
+
+################################
+# Numpy Array Özellikleri (Attributes of Numpy Arrays)
+################################
+import numpy as np
+
+# ndim: boyut sayısı
+# shape: boyut bilgisi
+# size: toplam eleman sayısı
+# dtype: array veri tipi
+
+a = np.random.randint(10, size=5)
+a.ndim
+a.shape
+a.size
+a.dtype
