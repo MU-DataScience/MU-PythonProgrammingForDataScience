@@ -39,3 +39,22 @@ students_no = ["John", "Venessa"]
 
 [student.lower() if student in students_no else student.upper() for student in students]
 [student.upper() if student not in students_no else student.lower() for student in students]
+
+###################################
+# Dict Comprehension
+###################################
+
+dictionary = {'a': 1,
+              'b': 2,
+              'c': 3,
+              'd': 4}
+
+dictionary.keys()
+dictionary.values()
+dictionary.items()
+
+{k: v ** 2 for (k, v) in dictionary.items()}
+
+{k.upper(): v for (k, v) in dictionary.items()}
+
+{k.upper(): v * 2 for (k, v) in dictionary.items()}
