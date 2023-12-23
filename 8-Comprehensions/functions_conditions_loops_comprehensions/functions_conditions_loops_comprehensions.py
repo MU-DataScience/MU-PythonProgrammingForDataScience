@@ -106,3 +106,20 @@ df.columns = A
 
 df = sns.load_dataset("car_crashes")
 df.columns = [col.upper() for col in df.columns]
+
+############################
+# İsminde "INS" olan değişkenlerin başına FLAG diğerlerine NO_FLAG eklemek istiyoruz.
+############################
+
+# before:
+# ['TOTAL','SPEEDING','ALCOHOL','NOT_DISTRACTED','NO_PREVIOUS','INS_PREMIUM','INS_LOSSES','ABBREV']
+
+# after:['NO_FLAG_TOTAL','NO_FLAG_SPEEDING','NO_FLAG_ALCOHOL','NO_FLAG_NOT_DISTRACTED','NO_FLAG_NO_PREVIOUS','FLAG_INS_PREMIUM','FLAG_INS_LOSSES','NO_FLAG_ABBREV']
+
+[col for col in df.columns if "INS" in col]
+
+["FLAG_" + col for col in df.columns if "INS" in col]
+
+["FLAG_" + col if "INS" in col else "NO_FLAG_" + col for col in df.columns]
+
+df.columns = ["FLAG_" + col if "INS" in col else "NO_FLAG_" + col for col in df.columns]
