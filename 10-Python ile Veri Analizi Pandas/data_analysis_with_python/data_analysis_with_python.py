@@ -24,3 +24,12 @@ s.values
 type(s.values)
 s.head(3)
 s.tail(3)
+
+#######################################
+# Veri Okuma
+#######################################
+import pandas as pd
+
+df = pd.read_csv("datasets/advertising.csv")
+df.head()
+# pandas cheatsheet
