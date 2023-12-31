@@ -21,14 +21,14 @@ df.groupby("PRICE")["PRICE"].count()
 df["PRICE"].value_counts()
 
 # Soru 5: Hangi ülkeden kaçar tane satış olmuş?
-df.groupby("COUNTRY")["COUNTRY"].count()
+df.groupby("COUNTRY")["PRICE"].count()
 df["COUNTRY"].value_counts()
 
 # Soru 6: Ülkelere göre satışlardan toplam ne kadar kazanılmış?
 df.groupby("COUNTRY").agg({"PRICE": "sum"})
 
 # Soru 7: SOURCE türlerine göre satış sayıları nedir?
-df.groupby("SOURCE")["SOURCE"].count()
+df.groupby("SOURCE")["PRICE"].count()
 df["SOURCE"].value_counts()
 
 # Soru 8: Ülkelere göre PRICE ortalamaları nedir?
