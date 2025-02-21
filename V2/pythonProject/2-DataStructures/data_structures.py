@@ -129,3 +129,60 @@ long_str
 "Veri" in long_str
 
 "bool" in long_str
+
+###################################################
+# String (Karakter Dizisi) Metotları
+###################################################
+
+dir(int)
+dir(str)
+
+#######################
+# len
+#######################
+
+name = "john"
+type(name)
+type(len)
+
+len(name)
+len("musauyumaz")
+len("miuul")
+
+#######################
+# upper() & lower(): küçük-büyük dönüşümleri
+#######################
+
+"miuul".upper()
+"MIUUL".lower()
+
+# type(upper)
+# type(upper())
+
+#######################
+# replace: karakter değiştirir
+#######################
+hi = "Hello Ai Era"
+hi.replace("l","p")
+
+#######################
+# split: böler
+#######################
+"Hello Ai Era".split()
+
+#######################
+# strip: kırpar
+#######################
+
+" ofofo ".strip()
+"ofofo".strip("o")
+
+#######################
+# capitalize: ilk harfi büyütür.
+#######################
+
+"foo".capitalize()
+
+dir("foo")
+
+"foo".startswith("f")
