@@ -163,7 +163,7 @@ len("miuul")
 # replace: karakter değiştirir
 #######################
 hi = "Hello Ai Era"
-hi.replace("l","p")
+hi.replace("l", "p")
 
 #######################
 # split: böler
@@ -186,3 +186,63 @@ hi.replace("l","p")
 dir("foo")
 
 "foo".startswith("f")
+
+###################################################
+# Liste (List)
+###################################################
+
+# - Değiştirilebilir
+# - Sıralıdır. Index işlemleri yapılabilir
+# - Kapsayıcıdır.
+
+notes = [1, 2, 3, 4]
+type(notes)
+
+names = ["a", "b", "v", "d"]
+
+not_nam = [1, 2, 3, "a", "b", True, [1, 2, 3]]
+
+not_nam[0]
+not_nam[5]
+not_nam[6]
+not_nam[6][1]
+
+type(not_nam[6])
+type(not_nam[6][1])
+
+notes[0] = 99
+
+not_nam[0:4]
+
+#######################
+# Liste Metodları (List Methods)
+#######################
+
+dir(notes)
+
+#######################
+# len: builtin python fonksiyonu, boyut bilgisi
+#######################
+
+len(notes)
+len(not_nam)
+
+#######################
+# append: eleman ekler
+#######################
+
+notes
+notes.append(100)
+
+#######################
+# pop: index'e göre siler
+#######################
+
+notes.pop(0)
+
+#######################
+# insert: index'e ekler
+#######################
+
+notes.insert(2, 99)
+
