@@ -115,4 +115,31 @@ def add_element(a, b):
 
 add_element(1, 8)
 add_element(18, 8)
-add_element(180,10)
+add_element(180, 10)
+
+
+##########################################
+# Ön Tanımlı Argümanlar/Parametreler (Default Parameters/Arguments)
+##########################################
+
+def divide(a, b):
+    print(a / b)
+
+
+divide(1, 2)
+
+
+def divide(a, b=1):
+    print(a / b)
+
+
+divide(1)
+
+
+def say_hi(string="Merhaba"):
+    print(string)
+    print("Hi")
+    print("Hello")
+
+
+say_hi()
