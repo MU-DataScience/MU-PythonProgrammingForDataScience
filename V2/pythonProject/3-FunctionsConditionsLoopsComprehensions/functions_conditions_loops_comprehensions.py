@@ -143,3 +143,22 @@ def say_hi(string="Merhaba"):
 
 
 say_hi()
+
+##########################################
+# Ne Zaman Fonksiyon Yazma İhtiyacımız Olur?
+##########################################
+
+# varm, moisture, charge
+
+(56 + 15) / 80
+(17 + 45) / 70
+(52 + 45) / 80
+
+
+# DRY
+
+def calculate(varm, moisture, charge):
+    print((varm + moisture) / charge)
+
+
+calculate(98, 12, 78)
