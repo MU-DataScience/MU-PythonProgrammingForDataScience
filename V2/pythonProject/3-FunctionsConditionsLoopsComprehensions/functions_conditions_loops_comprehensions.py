@@ -233,3 +233,18 @@ def all_calculation(varm, moisture, charge, a, p):
 
 
 all_calculation(1, 3, 5, 19, 12)
+
+##########################################
+# Local & Global Değişkenler (Local & Global Variables)
+##########################################
+
+list_store = [1, 2]
+
+
+def add_element(a, b):
+    c = a * b
+    list_store.append(c)
+    print(list_store)
+
+
+add_element(1, 9)
