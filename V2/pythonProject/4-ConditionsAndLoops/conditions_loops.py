@@ -106,3 +106,57 @@ for salary in salaries:
         print(new_salary(salary, 10))
     else:
         print(new_salary(salary, 20))
+
+#######################################
+# Uygulama - Mülakat Sorusu
+#######################################
+
+# Amaç: Aşağıdaki şekilde string değiştiren fonksiyon yazmak istiyoruz.
+
+# before: "hi my name is john and i am learning python"
+# after: "Hi mY NaMe iS JoHn aNd i aM LeArNiNg pYtHoN"
+
+# region My Answer
+text = "hi my name is john and i am learning python"
+new_text = ""
+
+i = 0
+for char in "hi my name is john and i am learning python":
+    if (i % 2 == 0):
+        new_text += char.upper()
+    else:
+        new_text += char
+
+    i = i + 1
+
+print(new_text)
+
+# endregion
+
+range(len("miuul"))
+range(0, 5)
+
+for i in range(0, 5):
+    print(i)
+
+for i in range(len("miuul")):
+    print(i)
+
+
+# region Answer
+def alternating(string):
+    new_string = ""
+    # girilen string'in index'lerinde gez.
+    for string_index in range(len(string)):
+        # index çift ise büyük harfe çevir.
+        if string_index % 2 == 0:
+            new_string += string[string_index].upper()
+        # index tek ise küçük harfe çevir.
+        else:
+            new_string += string[string_index].lower()
+    print(new_string)
+
+alternating("miuul")
+alternating("hi my name is john and i am learning python")
+
+# endregion
