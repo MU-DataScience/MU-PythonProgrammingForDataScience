@@ -237,7 +237,6 @@ def divide_students(students):
 
 divide_students(students)
 # endregion
-
 # region Answer
 students = ["John", "Mark", "Venessa", "Mariam"]
 
@@ -256,4 +255,25 @@ def divide_students(students):
 st = divide_students(students)
 st[0]
 st[1]
+
+
 # endregion
+
+
+#######################################
+# alternating fonksiyonunun enumerate ile yazılması
+#######################################
+# "hi my name is john and i am learning python"
+
+def alternating_with_enumarate(string):
+    new_str = ""
+    for index, char in enumerate(string):
+        if index % 2 == 0:
+            new_str += char.upper()
+        else:
+            new_str += char.lower()
+
+    print(new_str)
+
+
+alternating_with_enumarate("hi my name is john and i am learning python")
