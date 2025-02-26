@@ -277,3 +277,15 @@ def alternating_with_enumarate(string):
 
 
 alternating_with_enumarate("hi my name is john and i am learning python")
+
+#######################################
+# Zip
+#######################################
+
+students = ["John", "Mark", "Venessa", "Mariam"]
+
+departments = ["mathematics", "statistics", "physics", "astronomy"]
+
+ages = [23, 30, 26, 22]
+
+list(zip(students, departments, ages))
