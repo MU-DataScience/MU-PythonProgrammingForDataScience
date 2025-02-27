@@ -419,3 +419,31 @@ for n in numbers:
         new_dict[n] = n ** 2
 
 {n: n ** 2 for n in numbers if n % 2 == 0}
+
+##########################
+# List & Dict Comprehensions Uygulamalar
+##########################
+
+##########################
+# Bir Veri Setindeki Değişken İsimlerini Değiştirmek
+##########################
+
+# before:
+# ['total', 'speeding', 'alcohol', 'not_distracted', 'no_previous', 'ins_premium', 'ins_losses', 'abbrev']
+
+# after
+# ['TOTAL', 'SPEEDING', 'ALCOHOL', 'NOT_DISTRACTED', 'NO_PREVIOUS', 'INS_PREMIUM', 'INS_LOSSES', 'ABBREV']
+
+import seaborn as sns
+
+df = sns.load_dataset("car_crashes")
+df.columns
+
+A = []
+for col in df.columns:
+    A.append(col.upper())
+
+df.columns = A
+
+df = sns.load_dataset("car_crashes")
+df.columns = [col.upper() for col in df.columns]
