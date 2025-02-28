@@ -75,6 +75,29 @@ np.random.randint(1, 10, size=9)
 np.random.randint(1, 10, size=9).reshape(3, 3)
 
 ar = np.random.randint(1, 10, size=9)
-ar.reshape(3,3)
+ar.reshape(3, 3)
 
 np.random.randint(1, 10, size=10).reshape(3, 3)
+
+###############################
+#  Index Seçimi (Index Selection)
+###############################
+import numpy as np
+
+a = np.random.randint(10, size=10)
+a[0]
+a[0:5]
+a[0] = 999
+
+m = np.random.randint(10, size=(3, 5))
+m[0, 0]
+m[1, 1]
+m[2, 3]
+
+m[2, 3] = 999
+
+m[2, 3] = 2.9
+
+m[:, 0]
+m[1, :]
+m[0:2, 0:3]
