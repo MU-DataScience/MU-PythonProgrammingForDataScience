@@ -25,3 +25,12 @@ s.values
 type(s.values)
 s.head(3)
 s.tail(3)
+
+################################
+# Veri Okuma (Reading Data)
+################################
+import pandas as pd
+
+df = pd.read_csv("5-DataAnalysisWithPython/datasets/advertising.csv")
+df.head()
+# pandas cheatsheet
