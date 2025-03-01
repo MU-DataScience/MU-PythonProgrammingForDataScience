@@ -134,3 +134,26 @@ df.drop("age3", axis=1).head()
 df.drop(col_names, axis=1).head()
 
 df.loc[:, ~df.columns.str.contains("age")].head()
+
+################################
+# iloc & loc
+################################
+import pandas as pd
+import seaborn as sns
+
+pd.set_option('display.max_columns', None)
+df = sns.load_dataset("titanic")
+df.head()
+
+# iloc: integer based selection
+df.iloc[0:3]
+df.iloc[0, 0]
+
+# loc: label based selection
+df.loc[0:3]
+
+df.iloc[0:3, 0:3]
+df.loc[0:3, "age"]
+
+col_names = ["age", "embarked", "alive"]
+df.loc[0:3, col_names]
