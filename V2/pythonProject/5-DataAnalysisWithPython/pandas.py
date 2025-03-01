@@ -53,3 +53,49 @@ df.isnull().values.any()
 df.isnull().sum()
 df["sex"].head()
 df["sex"].value_counts()
+
+################################
+# Pandas'ta Seçim İşlemleri (Selection in Pandas)
+################################
+import pandas as pd
+import seaborn as sns
+
+df = sns.load_dataset("titanic")
+df.head()
+
+df.index
+df[0:13]
+df.drop(0, axis=0).head()
+
+delete_index = [1, 3, 5, 7]
+df.drop(delete_index, axis=0).head(10)
+
+# df = df.drop(delete_index,axis=0)
+# df = df.drop(delete_index,axis=0, inplace=True)
+
+##########################
+# Değişkeni Index'e Çevirmek
+##########################
+
+df["age"].head()
+df.age.head()
+
+df.index = df["age"]
+
+df.drop("age", axis=1).head()
+
+df.drop("age", axis=1, inplace=True)
+df.head()
+
+##########################
+# Indexi Değişkene Çevirmek
+##########################
+
+df.index
+
+df["age"] = df.index
+
+df.head()
+df.drop("age", axis=1, inplace=True)
+
+df = df.reset_index().head()
