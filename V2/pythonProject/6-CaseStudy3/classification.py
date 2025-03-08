@@ -53,3 +53,7 @@ df.groupby(["SaleCityName", "ConceptName", "EB_Score"]).agg({"Price": ["mean", "
 df.groupby(["SaleCityName", "ConceptName", "Seasons"]).agg({"Price": ["mean", "count"]}).head()
 df.groupby(["SaleCityName", "ConceptName", "CInDay"]).agg({"Price": ["mean", "count"]}).head()
 # endregion
+#region Görev 4: City-Concept-Season kırılımının çıktısını PRICE'a göre sıralayınız.
+# Elde ettiğiniz çıktıyı agg_df olarak kaydediniz.
+agg_df = df.groupby(["SaleCityName","ConceptName","Seasons"]).agg({"Price":"mean"}).sort_values("Price",ascending=0)
+#endregion
