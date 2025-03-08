@@ -49,11 +49,49 @@ df["EB_Score"] = pd.cut(df["SaleCheckInDayDiff"], [-1, 7, 30, 90, df["SaleCheckI
 # Şehir-Concept-EB Score, Şehir-Concept- Sezon, Şehir-Concept-CInDay kırılımında ortalama ödenen ücret ve yapılan işlem sayısı cinsinden inceleyiniz.
 
 
-df.groupby(["SaleCityName", "ConceptName", "EB_Score"]).agg({"Price": ["mean", "count"]}).head()
-df.groupby(["SaleCityName", "ConceptName", "Seasons"]).agg({"Price": ["mean", "count"]}).head()
-df.groupby(["SaleCityName", "ConceptName", "CInDay"]).agg({"Price": ["mean", "count"]}).head()
+df.groupby(["SaleCityName", "ConceptName", "EB_Score"]).agg({"Price": ["mean", "count"]})
+df.groupby(["SaleCityName", "ConceptName", "Seasons"]).agg({"Price": ["mean", "count"]})
+df.groupby(["SaleCityName", "ConceptName", "CInDay"]).agg({"Price": ["mean", "count"]})
 # endregion
-#region Görev 4: City-Concept-Season kırılımının çıktısını PRICE'a göre sıralayınız.
+# region Görev 4: City-Concept-Season kırılımının çıktısını PRICE'a göre sıralayınız.
 # Elde ettiğiniz çıktıyı agg_df olarak kaydediniz.
-agg_df = df.groupby(["SaleCityName","ConceptName","Seasons"]).agg({"Price":"mean"}).sort_values("Price",ascending=0)
-#endregion
+agg_df = df.groupby(["SaleCityName", "ConceptName", "Seasons"]).agg({"Price": "mean"}).sort_values("Price",
+                                                                                                   ascending=False)
+agg_df.head(20)
+# endregion
+# region Görev 5: Indekste yer alan isimleri değişken ismine çeviriniz.
+agg_df.reset_index(inplace=True)
+agg_df.head()
+# endregion
+# region Görev 6: Yeni seviye tabanlı müşterileri (persona) tanımlayınız.
+# Yeni seviye tabanlı satışları tanımlayınız ve veri setine değişken olarak ekleyiniz.
+# Yeni eklenecek değişkenin adı: sales_level_based
+# Önceki soruda elde edeceğiniz çıktıdaki gözlemleri bir araya getirerek sales_level_based değişkenini oluşturmanız gerekmektedir.
+
+agg_df["sales_level_based"] = ["_".join([city.upper(), concept.upper(), season.upper()])
+                               for city, concept, season in zip(agg_df["SaleCityName"],
+                                                                agg_df["ConceptName"],
+                                                                agg_df["Seasons"])]
+
+agg_df["sales_level_based"] = agg_df[["SaleCityName", "ConceptName", "Seasons"]].agg(lambda x: '_'.join(x).upper(),
+                                                                                     axis=1)
+# endregion
+# region Görev 7: Yeni müşterileri (personaları) segmentlere ayırınız.
+# Yeni personaları PRICE’a göre 4 segmente ayırınız.
+# Segmentleri SEGMENT isimlendirmesi ile değişken olarak agg_df’e ekleyiniz.
+# Segmentleri betimleyiniz (Segmentlere göre group by yapıp price mean, max, sum’larını alınız).
+
+agg_df["SEGMENT"] = pd.qcut(agg_df["Price"], 4, labels=["D", "C", "B", "A"])
+
+agg_df.groupby("SEGMENT").agg({"Price": ["mean", "max", "sum"]})
+# endregion
+# region Görev 8: Yeni gelen müşterileri sınıflandırıp, ne kadar gelir getirebileceklerini tahmin ediniz.
+# Antalya’da herşey dahil ve yüksek sezonda tatil yapmak isteyen bir kişinin ortalama ne kadar gelir kazandırması beklenir?
+# Girne’de yarım pansiyon bir otele düşük sezonda giden bir tatilci hangi segmentte yer alacaktır?
+
+new_user = "ANTALYA_HERŞEY DAHIL_HIGH"
+agg_df[agg_df["sales_level_based"] == new_user]
+
+new_user2 = "GIRNE_YARIM PANSIYON_LOW"
+agg_df[agg_df["sales_level_based"] == new_user2]["SEGMENT"]
+# endregion
