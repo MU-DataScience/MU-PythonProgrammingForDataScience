@@ -5,7 +5,7 @@ pd.set_option("display.max_columns", None)
 pd.set_option("display.width", 500)
 pd.set_option("display.float_format", lambda x: '%.2f' % x)
 
-#region Görev 1
+# region Görev 1
 # Soru1 : miuul_gezinomi.xlsx dosyasını okutunuz ve veri seti ile ilgili genel bilgileri gösteriniz.
 df = pd.read_excel("6-CaseStudy3/gezinomi_tanitim/miuul_gezinomi.xlsx")
 df.head()
@@ -35,13 +35,21 @@ df.groupby("ConceptName").agg({"Price": "mean"})
 
 # Soru9: Şehir-Concept kırılımındaPRICE ortalamalarınedir?
 df.groupby(by=["SaleCityName", "ConceptName"]).agg({"Price": "mean"})
-#endregion
-#region Görev 2 SaleCheckInDayDiff değişkenini kategorik bir değişkene çeviriniz.
+# endregion
+# region Görev 2 SaleCheckInDayDiff değişkenini kategorik bir değişkene çeviriniz.
 # SaleCheckInDayDiff değişkeni müşterinin CheckIn tarihinden ne kadar önce satin alımını tamamladığını gösterir.
 # Aralıkları ikna edici şekilde oluşturunuz.
 # Örneğin: ‘0_7’, ‘7_30', ‘30_90', ‘90_max’ aralıklarını kullanabilirsiniz.
 # Bu aralıklar için "Last Minuters", "Potential Planners", "Planners", "Early Bookers“ isimlerini kullanabilirsiniz
 
-df["SaleCheckInDayDiff2"] = pd.cut(df["SaleCheckInDayDiff"],[-1,7,30,90,df["SaleCheckInDayDiff"].max() + 1],labels=["Last Minuters", "Potential Planners", "Planners", "Early Bookers"])
-#endregion
+df["EB_Score"] = pd.cut(df["SaleCheckInDayDiff"], [-1, 7, 30, 90, df["SaleCheckInDayDiff"].max() + 1],
+                        labels=["Last Minuters", "Potential Planners", "Planners", "Early Bookers"])
+# endregion
+# region Görev 3: COUNTRY, SOURCE, SEX, AGE kırılımında ortalama kazançlar nedir?
+# Şehir-Concept-EB Score, Şehir-Concept- Sezon, Şehir-Concept-CInDay kırılımında ortalama ödenen ücret ve yapılan işlem sayısı cinsinden inceleyiniz.
 
+
+df.groupby(["SaleCityName", "ConceptName", "EB_Score"]).agg({"Price": ["mean", "count"]}).head()
+df.groupby(["SaleCityName", "ConceptName", "Seasons"]).agg({"Price": ["mean", "count"]}).head()
+df.groupby(["SaleCityName", "ConceptName", "CInDay"]).agg({"Price": ["mean", "count"]}).head()
+# endregion
